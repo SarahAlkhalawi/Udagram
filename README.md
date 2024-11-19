@@ -1,7 +1,7 @@
 # Hosting a Full-Stack Application
 
 ### Project Link
-Frontend: http://udagram009670938220.s3-website-us-east-1.amazonaws.com/home
+Frontend: http://udagram009670938220.s3-website-us-east-1.amazonaws.com
 
 Backend: http://udagram-api-dev.us-east-1.elasticbeanstalk.com/api/v0/feed
 
