@@ -10,6 +10,9 @@ import {NextFunction} from 'connect';
 import * as EmailValidator from 'email-validator';
 import {config} from 'bluebird';
 
+console.log('JWT_SECRET:', c.config.jwt.secret);
+console.log('Database Host:', c.config.host);
+
 const router: Router = Router();
 var bcrypt = require('bcryptjs');
 
@@ -24,6 +27,10 @@ async function comparePasswords(plainTextPassword: string, hash: string): Promis
 }
 
 function generateJWT(user: User): string {
+  if (!c.config.jwt.secret) {
+    throw new Error('JWT secret is not defined in the configuration.');
+  }
+
   return jwt.sign(user.short(), c.config.jwt.secret);
 }
 
